@@ -1,0 +1,103 @@
+﻿<Window x:Class="DiffusionVideo.Diffusion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DiffusionVideo"
+        mc:Ignorable="d"
+        WindowStyle="None"
+
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        Title="Fenêtre de Projection" Height="1080" Width="1920" Background="Black" SizeToContent="WidthAndHeight">
+    <Viewbox Name="VBx" Stretch="Uniform">
+        <Grid Name="Grid" Width="1920">
+            <MediaElement x:Name="TopM" LoadedBehavior="Manual" UnloadedBehavior="Play"  Margin="0,0,0,782" Height="282" VerticalAlignment="Center" HorizontalAlignment="Center" Width="516" RenderTransformOrigin="0.5,0.5">
+                <MediaElement.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1" />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </MediaElement.RenderTransform>
+            </MediaElement>
+            <Rectangle Name="LeftRect" Margin="0,0,785,0" Stroke="Black" RenderTransformOrigin="0.5,0.5"  Width="500" HorizontalAlignment="Center" Height="292" VerticalAlignment="Center">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="270" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Name="RightRect" Margin="785,0,0,0" Stroke="Black" RenderTransformOrigin="0.5,0.5" Width="500" HorizontalAlignment="Center" Height="292" VerticalAlignment="Center">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="90" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Name="BotRect" Height="281" Margin="0,782,0,0" Stroke="Black" Width="500" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="180" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" Height="282" Margin="702,0,680,782" RenderTransformOrigin="0.5,0.5">
+                <ScrollViewer.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1" />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </ScrollViewer.RenderTransform>
+                <TextBlock x:Name="TopText"  TextWrapping="Wrap" Margin="0,0,0,782" VerticalAlignment="Center"   Height="auto" HorizontalAlignment="Center" Width="516" RenderTransformOrigin="0.5,0.5" Foreground="White" />
+            </ScrollViewer>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="785,0,0,0" Height="282"  Width="516" RenderTransformOrigin="0.5,0.5">
+                <ScrollViewer.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1" />
+                        <SkewTransform />
+                        <RotateTransform Angle="90" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </ScrollViewer.RenderTransform>
+                <TextBlock x:Name="RightText"  TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Width="500" HorizontalAlignment="Center" Height="auto" VerticalAlignment="Center" Foreground="White" />
+            </ScrollViewer>
+
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,782,0,0"  Height="282"  Width="516" RenderTransformOrigin="0.5,0.5">
+                <ScrollViewer.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1" />
+                        <SkewTransform />
+                        <RotateTransform Angle="180" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </ScrollViewer.RenderTransform>
+                <TextBlock x:Name="BotText"  TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Width="500" HorizontalAlignment="Center" Height="auto" VerticalAlignment="Center" Foreground="White" />
+            </ScrollViewer>
+
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,0,785,0"   Height="282"  Width="516" RenderTransformOrigin="0.5,0.5">
+                <ScrollViewer.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1" />
+                        <SkewTransform />
+                        <RotateTransform Angle="270" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </ScrollViewer.RenderTransform>
+                <TextBlock x:Name="LeftText"  TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Width="500" HorizontalAlignment="Center" Height="auto" VerticalAlignment="Center" Foreground="White" />
+            </ScrollViewer>
+        </Grid>
+    </Viewbox>
+</Window>
